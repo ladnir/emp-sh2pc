@@ -32,10 +32,10 @@ void test_sort(int party) {
 
 int main(int argc, char** argv) {
 	int port, party;
-	parse_party_and_port(argv, &party, &port);
+	parse_party_and_port(argv, argc, &party, &port);
 	NetIO * io = new NetIO(party==ALICE ? nullptr : SERVER_IP, port);
 
-	setup_semi_honest(io, party);
+	setup_semi_honest(io,(EmpParty) party, toBlock(party));
 	test_millionare(party, atoi(argv[3]));
 	test_sort(party);
 	delete io;

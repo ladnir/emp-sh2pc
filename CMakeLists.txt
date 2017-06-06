@@ -18,15 +18,9 @@ LINK_DIRECTORIES(${cryptoTools_LINK_DIRS})
 message(STATUS "ss ${EMP-OT_INCLUDE_DIRS}")
 
 
-if(MSVC)
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /W3 /EHsc -D_CRT_SECURE_NO_WARNINGS /Z7 /DEBUG")
-	set(CMAKE_CXX_FLAGS_RELEASE "/MT")
-	set(CMAKE_CXX_FLAGS_DEBUG "/MTd")
-	set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF" CACHE STRING "" FORCE)
-else()
-	set(CMAKE_C_FLAGS "-pthread -Wall -march=native -O3 -maes")
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pg -ggdb")
-endif()
+
+set(CMAKE_C_FLAGS "-pthread -Wall -march=native -O3 -maes")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pg -ggdb")
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++14")
 
 

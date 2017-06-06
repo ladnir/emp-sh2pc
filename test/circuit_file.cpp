@@ -48,7 +48,10 @@ int circuit_file_main(int port, EmpParty party) {
 
 #ifdef NETWORK
 	io->set_nodelay();
+	std::cout << "syncing " << std::endl;
 	io->sync();
+	std::cout << "syncing done " << std::endl;
+
 	double t1 = wallClock();
 	Integer a(128, 2, ALICE);
 	Integer b(128, 3, BOB);

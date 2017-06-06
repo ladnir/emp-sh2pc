@@ -1,5 +1,5 @@
-#include "semihonest/semihonest.h"
-#include <emp-tool>
+#include "emp-sh2pc/semihonest/semihonest.h"
+#include <emp-tool.h>
 
 void test_millionare(int party, int number) {
 	Integer a(32, number, ALICE);

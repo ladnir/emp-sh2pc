@@ -1,5 +1,5 @@
-#include <emp-tool/emp-tool.h>
-#include "emp-sh2pc/semihonest/semihonest.h"
+#include <emp-tool.h>
+#include "emp-sh2pc/semihonest.h"
 
 #ifdef _MSC_VER
 const string circuit_file_location = EMP_CIRCUIT_PATH;

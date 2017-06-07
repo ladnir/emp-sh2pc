@@ -70,10 +70,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..;$(ProjectDir)../../relic/include;$(ProjectDir)../../libOTe/cryptoTools;C:/libs/boost;C:/libs/mpir/lib/x64/$(configuration);$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)../../emp-ot;$(ProjectDir)../../emp-tool;$(ProjectDir);$(ProjectDir)../../relic/include;$(ProjectDir)../../libOTe/cryptoTools;C:/libs/boost;C:/libs/mpir/lib/x64/$(configuration);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)..;$(ProjectDir)../../relic/include;$(ProjectDir)../../libOTe/cryptoTools;C:/libs/boost;C:/libs/mpir/lib/x64/$(configuration);$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)../../emp-ot;$(ProjectDir)../../emp-tool;$(ProjectDir);$(ProjectDir)../../relic/include;$(ProjectDir)../../libOTe/cryptoTools;C:/libs/boost;C:/libs/mpir/lib/x64/$(configuration);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -117,9 +117,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="emp-sh2pc.h" />
-    <ClInclude Include="semihonest\semihonest.h" />
-    <ClInclude Include="semihonest\semihonest_eva.h" />
-    <ClInclude Include="semihonest\semihonest_gen.h" />
+    <ClInclude Include="emp-sh2pc\semihonest.h" />
+    <ClInclude Include="emp-sh2pc\semihonest_eva.h" />
+    <ClInclude Include="emp-sh2pc\semihonest_gen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

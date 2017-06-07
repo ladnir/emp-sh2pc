@@ -1,13 +1,13 @@
 #ifndef SEMIHONEST_GEN_H__
 #define SEMIHONEST_GEN_H__
-#include <emp-tool/emp-tool.h>
-#include <emp-ot/emp-ot.h>
+#include <emp-tool.h>
+#include <emp-ot.h>
 #include <iostream>
 
 template<typename IO>
-void gen_feed(Backend* be, EmpParty party, block * label, const bool*, int length);
+void SemiHonestGen_gen_feed(Backend* be, EmpParty party, block * label, const bool*, int length);
 template<typename IO>
-void gen_reveal(Backend* be, bool* clear, EmpParty party, const block * label, int length);
+void SemiHonestGen_gen_reveal(Backend* be, bool* clear, EmpParty party, const block * label, int length);
 
 template<typename IO>
 class SemiHonestGen: public Backend { public:
@@ -22,8 +22,8 @@ class SemiHonestGen: public Backend { public:
 		this->io = io;
 		ot = new SHOTIterated<IO>(io, true, prg.random_block());
 		this->gc = gc;	
-		Feed_internal = gen_feed<IO>;
-		Reveal_internal = gen_reveal<IO>;
+		Feed_internal = SemiHonestGen_gen_feed<IO>;
+		Reveal_internal = SemiHonestGen_gen_reveal<IO>;
 	}
 	~SemiHonestGen() {
 		delete ot;
@@ -31,7 +31,7 @@ class SemiHonestGen: public Backend { public:
 };
 
 template<typename IO>
-void gen_feed(Backend* be, EmpParty party, block * label, const bool* b, int length) {
+void SemiHonestGen_gen_feed(Backend* be, EmpParty party, block * label, const bool* b, int length) {
 	SemiHonestGen<IO> * backend = (SemiHonestGen<IO>*)(be);
 	if(party == ALICE) {
 		backend->prg.random_block(label, length);
@@ -49,7 +49,7 @@ void gen_feed(Backend* be, EmpParty party, block * label, const bool* b, int len
 }
 
 template<typename IO>
-void gen_reveal(Backend* be, bool* b, EmpParty party, const block * label, int length) {
+void SemiHonestGen_gen_reveal(Backend* be, bool* b, EmpParty party, const block * label, int length) {
 	SemiHonestGen<IO> * backend = (SemiHonestGen<IO>*)(be);
 	for (int i = 0; i < length; ++i) {
 		if(isOne(&label[i]))

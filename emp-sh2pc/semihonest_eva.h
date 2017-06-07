@@ -1,7 +1,7 @@
 #ifndef SEMIHONEST_EVA_H__
 #define SEMIHONEST_EVA_H__
-#include <emp-tool/emp-tool.h>
-#include <emp-ot/emp-ot.h>
+#include <emp-tool.h>
+#include <emp-ot.h>
 #include <iostream>
 
 template<typename IO>

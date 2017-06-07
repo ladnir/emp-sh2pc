@@ -1,5 +1,5 @@
 
-#include <emp-tool/emp-tool.h>
+#include <emp-tool.h>
 #include <cryptoTools/Common/CLP.h>
 
 int bit_main         (int port, EmpParty party);

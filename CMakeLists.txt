@@ -54,7 +54,6 @@ add_test (bit)
 add_test (int)
 add_test (float)
 add_test (circuit_file)
-add_test (all)
 
 add_example (semi_honest)
 

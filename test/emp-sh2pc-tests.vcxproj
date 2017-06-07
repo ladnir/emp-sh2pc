@@ -23,7 +23,7 @@
     <ClCompile Include="circuit_file.cpp" />
     <ClCompile Include="float.cpp" />
     <ClCompile Include="int.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="all.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
